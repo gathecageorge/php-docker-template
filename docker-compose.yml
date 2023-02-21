@@ -1,0 +1,30 @@
+version: '3.1'
+
+services:
+  mysql:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+
+  webserver:
+    build:
+      context: .
+    restart: always
+    ports:
+      - 8081:80
+    volumes:
+      - ./:/var/www/html/
+    depends_on:
+      - mysql
+
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 8082:80
+    environment:
+      - PMA_HOST=mysql
+    depends_on:
+      - mysql
