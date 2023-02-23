@@ -23,6 +23,7 @@
     DATABASE_USER=testinguser
     DATABASE_USER_PASSWORD=AveryHardPassword
     MYSQL_DATABASE=testingdatabase
+    MYSQL_HOST=mysql
     ```
 3. Run docker compose
     ```bash

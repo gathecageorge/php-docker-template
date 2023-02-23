@@ -1,14 +1,16 @@
 <?php
-include_once "vendor/autoload.php";
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-$dotenv->safeLoad();
+require_once 'vendor/autoload.php';
+$faker = Faker\Factory::create();
+echo "<h1>Some fake text</h1>";
+echo $faker->text();
+echo "<hr>";
 ?>
 
 <?php // Get environment variables
-$servername = "mysql";
-$username   = $_ENV["DATABASE_USER"];
-$password   = $_ENV["DATABASE_USER_PASSWORD"];
-$database   = $_ENV["MYSQL_DATABASE"];
+$servername = getenv("MYSQL_HOST");
+$username   = getenv("DATABASE_USER");
+$password   = getenv("DATABASE_USER_PASSWORD");
+$database   = getenv("MYSQL_DATABASE");
 ?>
 
 <?php // PDO Database connection
