@@ -5,6 +5,25 @@
     ```bash
     composer install
     ```
+3. Copy .env_template to .env (`cp .env_template .env`) and edit as required
+    ```bash
+    # If the value of COMPOSE_FILE=docker-compose.yml:mount.yml
+    # then current (PWD) directory will be mounted to /var/www/html
+
+    # If the value of COMPOSE_FILE=docker-compose.yml
+    # then contents of current (PWD) directory will be copied to /var/www/html. 
+    # No mounting
+
+    COMPOSE_PATH_SEPARATOR=:
+    COMPOSE_FILE=docker-compose.yml:mount.yml
+
+    WEB_SERVER_PORT=8081
+    PHPMYADMIN_PORT=8082
+    DATABASE_ROOT_PASSWORD=root
+    DATABASE_USER=testinguser
+    DATABASE_USER_PASSWORD=AveryHardPassword
+    MYSQL_DATABASE=testingdatabase
+    ```
 3. Run docker compose
     ```bash
     docker-compose run -d
