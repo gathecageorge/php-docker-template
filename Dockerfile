@@ -4,8 +4,7 @@ RUN apt update && apt upgrade -y && apt autoremove -y
 
 RUN apt install -y git && \
   curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
-  docker-php-ext-install -j$(nproc) mysqli pdo pdo_mysql && \
-  apachectl restart
+  docker-php-ext-install -j$(nproc) mysqli pdo pdo_mysql
 
 ARG COMPOSE_FILE
 COPY . /var/www/html
