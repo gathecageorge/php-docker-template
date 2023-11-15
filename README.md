@@ -25,6 +25,7 @@
     MYSQL_DATABASE=testingdatabase
     MYSQL_HOST=mysql
     MOUNT_PATH=./
+    MYSQL_PORT=3306
     ```
 3. Run docker compose
     ```bash
