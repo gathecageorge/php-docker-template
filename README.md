@@ -8,10 +8,10 @@
 3. Copy .env_template to .env (`cp .env_template .env`) and edit as required
     ```bash
     # If the value of COMPOSE_FILE=docker-compose.yml:mount.yml
-    # then current (PWD) directory will be mounted to /var/www/html
+    # then (MOUNT_PATH) directory will be mounted to /var/www/html
 
     # If the value of COMPOSE_FILE=docker-compose.yml
-    # then contents of current (PWD) directory will be copied to /var/www/html. 
+    # then contents of (MOUNT_PATH) directory will be copied to /var/www/html. 
     # No mounting
 
     COMPOSE_PATH_SEPARATOR=:
@@ -24,6 +24,7 @@
     DATABASE_USER_PASSWORD=AveryHardPassword
     MYSQL_DATABASE=testingdatabase
     MYSQL_HOST=mysql
+    MOUNT_PATH=./
     ```
 3. Run docker compose
     ```bash
