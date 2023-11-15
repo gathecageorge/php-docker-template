@@ -14,6 +14,8 @@
     # then contents of (MOUNT_PATH) directory will be copied to /var/www/html. 
     # No mounting
 
+    Add :apache-config.yml to allow apache viewing dir contents
+
     COMPOSE_PATH_SEPARATOR=:
     COMPOSE_FILE=docker-compose.yml:mount.yml
 
